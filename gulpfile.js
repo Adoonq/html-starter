@@ -14,7 +14,7 @@ var gulp					= require('gulp'),
 var path = {
 	in: {
 		scss: 'app/scss/main.scss',
-		js: 'app/js/main.js',
+		js: 'app/javascript/main.js',
 	},
 	out: {
 		scss: 'app/assets/css',
@@ -23,11 +23,11 @@ var path = {
 	watch: {
 		html: 'app/*.html',
 		scss: 'app/scss/*.scss',
-		js: 'app/js/*.js',
+		js: 'app/javascript/*.js',
 	},
 	rsync: {
 		include: ['*.htaccess'],
-		exclude: ['scss', 'js'],
+		exclude: ['scss', 'javascript'],
 	},
 	base: 'app'
 }
