@@ -18,7 +18,15 @@ $gutter: $grid-gutter-width;
 		font-family: $font-family;
 		font-weight: $weight;
 		font-style: $style;
+		font-display: block;
 		src: url('#{$file-path}.eot');
 		src: url('#{$file-path}.eot?#iefix') format('embedded-opentype'), url('#{$file-path}.woff') format('woff'), url('#{$file-path}.ttf') format('truetype');
 	}
+}
+
+
+// FUNCTIONS
+@function rem($size) {
+	$remSize: $size / 16px;
+	@return #{$remSize}rem;
 }
