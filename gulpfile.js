@@ -22,8 +22,8 @@ var path = {
 	},
 	watch: {
 		html: 'app/*.html',
-		scss: 'app/scss/*.scss',
-		js: 'app/javascript/*.js',
+		scss: 'app/scss/**/*.scss',
+		js: 'app/javascript/**/*.js',
 	},
 	rsync: {
 		include: ['*.htaccess'],
@@ -43,7 +43,10 @@ var options = {
 	},
 	sass: {
 		outputStyle: 'expanded',
-		includePaths: [__dirname + '/node_modules']
+		includePaths: [
+			__dirname + '/node_modules',
+			__dirname + '/app/scss/custom'
+		]
 	},
 	sassNotify: {
 		title: "[SCSS] <%= error.relativePath %>:<%= error.line %>",
@@ -59,7 +62,10 @@ var options = {
 	},
 	include: {
 		extensions: 'js',
-		includePaths: [__dirname + '/node_modules']
+		includePaths: [
+			__dirname + '/node_modules',
+			__dirname + '/app/javascript/custom'
+		]
 	},
 	rsync: {
 		root: path.base,
