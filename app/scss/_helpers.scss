@@ -1,17 +1,98 @@
 // VARIABLES
-$font-primary: "Roboto", sans-serif;
-$color-accent: orange;
-$color-primary: #333;
-$color-white: #fff;
-$transition-fast: all .25s ease;
-$transition-slow: all .5s ease;
+$font-family-base: 'Roboto', sans-serif;
+$font-family-head: inherit;
+$font-size-base: 1rem;
+$font-weight-base: 400;
+$line-height-base: 1.5;
+$small-font-size: 80%;
 
+$h1-font-size: $font-size-base * 2.5;
+$h2-font-size: $font-size-base * 2;
+$h3-font-size: $font-size-base * 1.75;
+$h4-font-size: $font-size-base * 1.5;
+$h5-font-size: $font-size-base * 1.25;
+$h6-font-size: $font-size-base;
 
-// FRAMEWORK BS4
-$grid-gutter-width: 30px;
+$white: #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black: #000;
+
+$primary: #007bff;
+$secondary: $gray-600;
+$success: #28a745;
+$info: #17a2b8;
+$warning: #ffc107;
+$danger: #dc3545;
+$light: $gray-100;
+$dark: $gray-800;
+
+$spacer: 1rem;
+
+$body-bg: $white;
+$body-color: $gray-900;
+$body-min-width: 360px;
+
+$link-color: $primary;
+$link-decoration: none;
+$link-hover-color: darken($link-color, 15%);
+$link-hover-decoration: underline;
+
+$headings-margin-bottom: ($spacer / 2);
+$headings-font-family: inherit;
+$headings-font-weight: 500;
+$headings-line-height: 1.2;
+$headings-color: inherit;
+
+$text-muted: $gray-600;
+$paragraph-margin-bottom: 1rem;
+
+$border-width: 1px;
+$border-color: $gray-300;
+$border-radius: .25rem;
+
+$mark-padding: .2em;
+$mark-bg: #fcf8e3;
+
+$thumbnail-padding: .25rem;
+$thumbnail-bg: $body-bg;
+$thumbnail-border-width: $border-width;
+$thumbnail-border-color: $gray-300;
+$thumbnail-border-radius: $border-radius;
+$thumbnail-box-shadow: 0 1px 2px rgba($black, .075);
+
+$figure-caption-font-size: 90%;
+$figure-caption-color: $gray-600;
+
+$hr-border-color: rgba($black, .1);
+$hr-border-width: 1px;
+$hr-margin-y: $spacer;
+
+$transition-base: all .25s ease-in-out;
+
 $grid-columns: 12;
-$grid-breakpoints: (xs: 0, sm: 576px, md: 768px, lg: 992px, xl: 1200px);
-$container-max-widths: (sm: 540px, md: 720px, lg: 960px, xl: 1140px);
+$grid-gutter-width: 30px;
+$grid-breakpoints: (
+	xs: 0,
+	sm: 576px,
+	md: 768px,
+	lg: 992px,
+	xl: 1200px
+);
+$container-max-widths: (
+	sm: 540px,
+	md: 720px,
+	lg: 960px,
+	xl: 1140px
+);
+
 $gutter: $grid-gutter-width;
 
 

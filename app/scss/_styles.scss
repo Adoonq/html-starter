@@ -1,1 +1,25 @@
 /*=====  #4 CUSTOM STYLES  =====*/
+
+.demo {
+	padding: $spacer 0;
+
+	&-heading {
+		text-align: center;
+		margin-bottom: $spacer;
+	}
+
+	&-img {
+		margin-bottom: $spacer;
+	}
+
+	&-content {
+		color: $secondary;
+
+		p {
+
+			&:last-child {
+				margin-bottom: 0;
+			}
+		}
+	}
+}

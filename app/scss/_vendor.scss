@@ -1,8 +1,9 @@
-/*=====  #1 VENDOR  =====*/ // node_modules/
+/*=====  #1 VENDOR  =====*/
 
-// Bootstrap 4
-@import "bootstrap/scss/bootstrap-reboot.scss";
-@import "bootstrap/scss/bootstrap-grid.scss";
-@import "bootstrap/scss/utilities/_sizing.scss";
+// Bootstrap 4 (https://github.com/twbs/bootstrap/tree/v4-dev/scss)
+@import 'bootstrap/scss/bootstrap-reboot.scss';
+@import 'bootstrap/scss/bootstrap-grid.scss';
+@import 'bootstrap/scss/_type.scss';
+@import 'bootstrap/scss/_images.scss';
 
-// Other
+// Other (node_modules/)

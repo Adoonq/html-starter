@@ -1,3 +1,5 @@
 node_modules/
+app/scss/custom/**
+app/javascript/custom/**
 app/assets/css/**
 app/assets/js/**
