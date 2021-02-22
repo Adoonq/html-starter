@@ -2,6 +2,7 @@ node_modules/
 
 app/assets/css/*.css
 app/assets/js/*.js
+app/*.html
 
 yarn-debug.log
 yarn-error.log

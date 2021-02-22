@@ -6,9 +6,9 @@ import browserSync from 'browser-sync'
 import { paths, options } from './gulp/config'
 
 
+const bs = browserSync.create()
 const plugins = loadPlugins()
 
-const browserSyncTask = () => browserSync(options.browserSync)
 
 const stylesTask = () => {
   return src(paths.styles.src)
@@ -19,7 +19,7 @@ const stylesTask = () => {
     .pipe(plugins.cleanCss())
     .pipe(plugins.rename(options.rename))
     .pipe(dest(paths.styles.dest))
-    .pipe(browserSync.stream())
+    .pipe(bs.stream())
 }
 
 const scriptsTask = () => {
@@ -31,15 +31,28 @@ const scriptsTask = () => {
     .pipe(plugins.uglify())
     .pipe(plugins.rename(options.rename))
     .pipe(dest(paths.scripts.dest))
-    .pipe(browserSync.stream())
+    .pipe(bs.stream())
 }
 
-const watchTask = () => {
-	watch(paths.styles.watch, stylesTask)
-	watch(paths.scripts.watch, scriptsTask)
-	watch(paths.views.watch).on('change', browserSync.reload)
+const viewsTask = () => {
+  return src(paths.views.src)
+    .pipe(plugins.plumber())
+    .pipe(plugins.ssi())
+    .pipe(dest(paths.views.dest))
 }
+
+const serveTask = () => {
+  bs.init(options.browserSync)
+
+  watch(paths.styles.watch, stylesTask)
+	watch(paths.scripts.watch, scriptsTask)
+	watch(paths.views.watch, viewsTask).on('change', bs.reload)
+}
+
+const buildTask = parallel(stylesTask, scriptsTask, viewsTask)
 
 exports.styles = stylesTask
 exports.scripts = scriptsTask
-exports.default = series(stylesTask, scriptsTask, parallel(browserSyncTask, watchTask))
+exports.views = viewsTask
+exports.build = buildTask
+exports.default = series(buildTask, serveTask)

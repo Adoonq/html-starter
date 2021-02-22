@@ -11,7 +11,9 @@ const paths = {
     watch: 'app/javascript/**/*.js'
   },
   views: {
-    watch: 'app/*.html'
+    src: 'app/views/*.html',
+    dest: 'app',
+    watch: 'app/views/**/*.html'
   }
 }
 
