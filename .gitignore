@@ -5,3 +5,4 @@ app/assets/js/*.js
 
 yarn-debug.log
 yarn-error.log
+yarn.lock
