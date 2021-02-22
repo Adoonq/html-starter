@@ -1,12 +1,5 @@
-/*=====  #2 FONTS  =====*/
+@include font-face('FontName', '../fonts/path-to-font.woff2', 400);
 
-@include font-face('Roboto', '../fonts/RobotoBold/RobotoBold', 700);
-@include font-face('Roboto', '../fonts/RobotoMedium/RobotoMedium', 500);
-@include font-face('Roboto', '../fonts/RobotoRegular/RobotoRegular', 400);
-@include font-face('Roboto', '../fonts/RobotoLight/RobotoLight', 300);
-
-
-/*=====  #3 BASE  =====*/
 
 ::placeholder {
 	color: $secondary;
@@ -27,11 +20,7 @@ body {
 	overflow-x: hidden;
 }
 
-h1,
-h2,
-h3,
-h4,
-h5,
-h6 {
-	font-family: $font-family-head;
+img {
+  max-width: 100%;
+  height: auto;
 }

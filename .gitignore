@@ -1,5 +1,7 @@
 node_modules/
-app/scss/custom/**
-app/javascript/custom/**
-app/assets/css/**
-app/assets/js/**
+
+app/assets/css/*.css
+app/assets/js/*.js
+
+yarn-debug.log
+yarn-error.log
