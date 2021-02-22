@@ -12,7 +12,8 @@ const browserSyncTask = () => browserSync(options.browserSync)
 
 const stylesTask = () => {
   return src(paths.styles.src)
-    .pipe(plugins.sass(options.sass).on('error', plugins.sass.logError))
+    .pipe(plugins.plumber())
+    .pipe(plugins.sass(options.sass))
     .pipe(plugins.autoprefixer())
     .pipe(dest(paths.styles.dest))
     .pipe(plugins.cleanCss())
@@ -23,6 +24,7 @@ const stylesTask = () => {
 
 const scriptsTask = () => {
   return src(paths.scripts.src)
+    .pipe(plugins.plumber())
     .pipe(plugins.babel(options.babel))
     .pipe(plugins.include(options.include))
     .pipe(dest(paths.scripts.dest))
