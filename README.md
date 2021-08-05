@@ -1,1 +1,1 @@
-# html-starter
+# HTML Starter Template

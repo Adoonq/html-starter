@@ -2,22 +2,22 @@
 
 
 ::placeholder {
-	color: $secondary;
+  color: $secondary;
 }
 
 ::selection {
-	background-color: $primary;
-	color: $white;
+  color: $white;
+  background-color: $accent;
 }
 
 html {
-	font-size: 100%;
+  font-size: 100%;
 }
 
 body {
-	position: relative;
-	min-width: $body-min-width;
-	overflow-x: hidden;
+  position: relative;
+  min-width: $body-min-width;
+  overflow-x: hidden;
 }
 
 img {

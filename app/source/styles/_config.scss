@@ -1,0 +1,147 @@
+// Options
+$enable-rfs: true;
+$enable-negative-margins: false;
+
+// Colors
+$white:    #fff;
+$gray-100: #f8f9fa;
+$gray-200: #e9ecef;
+$gray-300: #dee2e6;
+$gray-400: #ced4da;
+$gray-500: #adb5bd;
+$gray-600: #6c757d;
+$gray-700: #495057;
+$gray-800: #343a40;
+$gray-900: #212529;
+$black:    #000;
+
+$accent:    #fd7e14;
+$primary:   #0d6efd;
+$secondary: $gray-600;
+$light:     $gray-100;
+$dark:      $gray-900;
+
+$theme-colors: (
+  "accent":    $accent,
+  "primary":   $primary,
+  "secondary": $secondary,
+  "light":     $light,
+  "dark":      $dark
+);
+
+// Body
+$body-color: $black;
+$body-bg: $white;
+$body-min-width: 360px;
+
+// Links
+$link-color: $accent;
+$link-decoration: underline;
+$link-shade-percentage: 20% ;
+$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-decoration: none;
+
+// Paragraphs
+$paragraph-margin-bottom: 1rem;
+
+// Typography
+$font-family-icon: 'Font Awesome 5 Pro';
+$font-family-base: Roboto, sans-serif;
+$font-family-code: monospace;
+$font-family-head: inherit;
+
+$font-size-root: null;
+$font-size-init: 1rem;
+$font-size-base: 1rem;
+
+$font-weight-base: 400;
+$font-weight-head: 700;
+
+$line-height-base: 1.5;
+$line-height-head: 1.2;
+
+$h1-font-size: $font-size-init * 2.75;
+$h2-font-size: $font-size-init * 1.75;
+$h3-font-size: $font-size-init * 1.5;
+$h4-font-size: $font-size-init * 1.25;
+$h5-font-size: $font-size-init * 1.125;
+$h6-font-size: $font-size-init;
+
+$headings-color:         null;
+$headings-font-family:   $font-family-head;
+$headings-font-weight:   $font-weight-head;
+$headings-line-height:   $line-height-head;
+$headings-margin-bottom: $paragraph-margin-bottom * .5;
+
+// Border radius
+$border-radius: .25rem;
+
+// Box shadow
+$box-shadow: 0 .25rem 1.25rem rgba($black, 0.1);
+
+// Transition
+$transition-base: all .2s ease-in-out;
+$transition-fade: opacity .15s linear;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .25,
+  2: $spacer * .5,
+  3: $spacer,
+  4: $spacer * 1.5,
+  5: $spacer * 3,
+);
+
+// Grid system
+$grid-columns: 12;
+$grid-gutter-width: 1.5rem;
+$grid-row-columns: 6;
+$grid-breakpoints: (
+  xs: 0,
+  sm: 576px,
+  md: 768px,
+  lg: 992px,
+  xl: 1200px, // 1280px
+  xxl: 1400px // null
+);
+
+$container-max-widths: (
+  sm: 540px,
+  md: 720px,
+  lg: 960px,
+  xl: 1140px, // 1200px
+  xxl: 1320px // null
+);
+
+$gutters: $spacers;
+
+// Mixins and functions
+@mixin font-face($font-family, $file-path, $weight: normal, $style: normal) {
+  @font-face {
+    font-family: $font-family;
+    font-weight: $weight;
+    font-style: $style;
+    font-display: swap;
+    src: url($file-path) format('woff2');
+  }
+}
+
+@function rem($size) {
+  $remSize: $size / 16px;
+  @return #{$remSize}rem;
+}
+
+// Vendors
+@import 'bootstrap/scss/functions';
+@import 'bootstrap/scss/variables';
+@import 'bootstrap/scss/mixins';
+
+@import 'node_modules/bootstrap/scss/root';
+@import 'node_modules/bootstrap/scss/reboot';
+
+// @import 'node_modules/bootstrap/scss/type';
+
+@import 'node_modules/bootstrap/scss/containers';
+@import 'node_modules/bootstrap/scss/grid';

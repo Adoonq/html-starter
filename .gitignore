@@ -1,9 +1,7 @@
-node_modules/
-
-app/assets/css/*.css
-app/assets/js/*.js
 app/*.html
+app/assets/css/*
+app/assets/js/*
+app/assets/img/*
 
-yarn-debug.log
-yarn-error.log
-yarn.lock
+node_modules/
+package-lock.json
