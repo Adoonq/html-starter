@@ -56,6 +56,17 @@ const options = {
   },
   imagemin: {
     silent: true
+  },
+  rsync: {
+    root: paths.base,
+    hostname: 'adoonqmb@adoonqmb.beget.tech',
+    destination: 'dev.adoonq.pro/public_html',
+    exclude: ['source'],
+    clean: true,
+    recursive: true,
+    archive: true,
+    silent: false,
+    compress: true
   }
 }
 

@@ -51,6 +51,11 @@ function images () {
     .pipe(dest(paths.images.dest))
 }
 
+function deploy () {
+  return src(paths.base)
+    .pipe(gulpPlugins.rsync(options.rsync))
+}
+
 function clear () {
   return del(paths.del)
 }
@@ -68,6 +73,7 @@ exports.views = views
 exports.styles = styles
 exports.scripts = scripts
 exports.images = images
+exports.deploy = deploy
 exports.clear = clear
 
 exports.build = series(clear, views, styles, scripts, images)
