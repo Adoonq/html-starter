@@ -32,17 +32,22 @@ $theme-colors: (
 // Body
 $body-color: $black;
 $body-bg: $white;
-$body-min-width: 360px;
+$body-min-width: 380px;
 
 // Links
 $link-color: $accent;
 $link-decoration: underline;
-$link-shade-percentage: 20% ;
-$link-hover-color: shift-color($link-color, $link-shade-percentage);
+$link-hover-color: $accent;
 $link-hover-decoration: none;
 
-// Paragraphs
-$paragraph-margin-bottom: 1rem;
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .5,
+  2: $spacer,
+  3: $spacer * 1.5
+);
 
 // Typography
 $font-family-icon: 'Font Awesome 5 Pro';
@@ -51,8 +56,10 @@ $font-family-code: monospace;
 $font-family-head: inherit;
 
 $font-size-root: null;
-$font-size-init: 1rem;
 $font-size-base: 1rem;
+
+$font-size-small: .75rem;
+$font-size-large: 1.25rem;
 
 $font-weight-base: 400;
 $font-weight-head: 700;
@@ -60,18 +67,21 @@ $font-weight-head: 700;
 $line-height-base: 1.5;
 $line-height-head: 1.2;
 
-$h1-font-size: $font-size-init * 2.75;
-$h2-font-size: $font-size-init * 1.75;
-$h3-font-size: $font-size-init * 1.5;
-$h4-font-size: $font-size-init * 1.25;
-$h5-font-size: $font-size-init * 1.125;
-$h6-font-size: $font-size-init;
+$h1-font-size: $font-size-base * 2.25;
+$h2-font-size: $font-size-base * 1.75;
+$h3-font-size: $font-size-base * 1.5;
+$h4-font-size: $font-size-base * 1.25;
+$h5-font-size: $font-size-base * 1.125;
+$h6-font-size: $font-size-base;
 
 $headings-color:         null;
 $headings-font-family:   $font-family-head;
 $headings-font-weight:   $font-weight-head;
 $headings-line-height:   $line-height-head;
-$headings-margin-bottom: $paragraph-margin-bottom * .5;
+$headings-margin-bottom: $spacer * .5;
+
+$paragraph-margin-bottom: 0;
+$small-font-size: $font-size-small;
 
 // Border radius
 $border-radius: .25rem;
@@ -82,17 +92,6 @@ $box-shadow: 0 .25rem 1.25rem rgba($black, 0.1);
 // Transition
 $transition-base: all .2s ease-in-out;
 $transition-fade: opacity .15s linear;
-
-// Spacing
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: $spacer * .25,
-  2: $spacer * .5,
-  3: $spacer,
-  4: $spacer * 1.5,
-  5: $spacer * 3,
-);
 
 // Grid system
 $grid-columns: 12;
@@ -132,16 +131,3 @@ $gutters: $spacers;
   $remSize: $size / 16px;
   @return #{$remSize}rem;
 }
-
-// Vendors
-@import 'bootstrap/scss/functions';
-@import 'bootstrap/scss/variables';
-@import 'bootstrap/scss/mixins';
-
-@import 'node_modules/bootstrap/scss/root';
-@import 'node_modules/bootstrap/scss/reboot';
-
-// @import 'node_modules/bootstrap/scss/type';
-
-@import 'node_modules/bootstrap/scss/containers';
-@import 'node_modules/bootstrap/scss/grid';

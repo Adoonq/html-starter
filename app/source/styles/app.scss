@@ -1,5 +1,12 @@
+@use 'sass:map';
+@use 'sass:math';
+
 @import 'config';
+@import 'vendor';
 
 @import 'base';
+
 @import 'components/**/*';
+@import 'layouts/**/*';
+
 @import 'common';

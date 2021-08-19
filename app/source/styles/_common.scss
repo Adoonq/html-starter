@@ -1,24 +1,5 @@
-html,
 body {
-  height: 100%;
-}
-
-body {
+  min-height: 100vh;
   display: flex;
   flex-direction: column;
-}
-
-header,
-footer {
-  padding: 1.5rem 0;
-}
-
-main {
-  flex-grow: 1;
-  padding-top: 1.5rem;
-}
-
-img {
-  display: block;
-  max-width: 100%;
 }
