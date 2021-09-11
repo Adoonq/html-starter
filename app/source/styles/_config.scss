@@ -40,14 +40,8 @@ $link-decoration: underline;
 $link-hover-color: $accent;
 $link-hover-decoration: none;
 
-// Spacing
-$spacer: 1rem;
-$spacers: (
-  0: 0,
-  1: $spacer * .5,
-  2: $spacer,
-  3: $spacer * 1.5
-);
+// Paragraphs
+$paragraph-margin-bottom: 0;
 
 // Typography
 $font-family-icon: 'Font Awesome 5 Pro';
@@ -78,9 +72,8 @@ $headings-color:         null;
 $headings-font-family:   $font-family-head;
 $headings-font-weight:   $font-weight-head;
 $headings-line-height:   $line-height-head;
-$headings-margin-bottom: $spacer * .5;
+$headings-margin-bottom: 0;
 
-$paragraph-margin-bottom: 0;
 $small-font-size: $font-size-small;
 
 // Border radius
@@ -92,6 +85,15 @@ $box-shadow: 0 .25rem 1.25rem rgba($black, 0.1);
 // Transition
 $transition-base: all .2s ease-in-out;
 $transition-fade: opacity .15s linear;
+
+// Spacing
+$spacer: 1rem;
+$spacers: (
+  0: 0,
+  1: $spacer * .5,
+  2: $spacer,
+  3: $spacer * 1.5
+);
 
 // Grid system
 $grid-columns: 12;
@@ -128,6 +130,5 @@ $gutters: $spacers;
 }
 
 @function rem($size) {
-  $remSize: $size / 16px;
-  @return #{$remSize}rem;
+  @return #{math.div($size, 16px)}rem;
 }
